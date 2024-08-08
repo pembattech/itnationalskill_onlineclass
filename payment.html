@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+        input[type="file"], input[type="email"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .qr-code {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .qr-code img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Payment Information</h1>
+        <form id="paymentForm" method="post" action="payment_confirmation.php" enctype="multipart/form-data">
+            <div class="qr-code">
+                <label for="id_qr_code">Scan QR Code:</label>
+                <img src="path_to_qr_code_image.jpg" alt="QR Code" id="id_qr_code">
+            </div>
+            
+            <div>
+                <label for="id_payment_statement">Upload Payment Statement:</label>
+                <input type="file" name="payment_statement" id="id_payment_statement" accept="image/*, .pdf" required>
+            </div>
+            
+            <div>
+                <label for="id_billing_email">Billing Email:</label>
+                <input type="email" name="billing_email" id="id_billing_email" required>
+            </div>
+            
+            <div>
+                <button type="submit">Submit Payment</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
